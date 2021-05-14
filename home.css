@@ -1,0 +1,93 @@
+
+
+#ul_TopBar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+
+}
+
+#li_TopBar {
+  float: left;
+}
+
+#li_a_TopBar {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+
+
+
+#ul_LeftBar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 15%;
+    height: 75%;
+  background-color: #333;
+  position: absolute;
+    overflow-y: scroll;
+scrollbar-width: none;
+  /*height: 100%;*/
+}
+
+#li_a_LeftBar {
+  display: block;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+    overflow: auto;
+}
+
+#li_LeftBar{}
+
+#polaroid {
+  width: 20%;
+position: relative;
+  left: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#div_container {
+  padding: 10px 10px;
+}
+
+
+.column {
+    float: left;
+    margin-right: 12px;
+  width: 23.33%;
+  padding: 5px;
+position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.square {
+  height: 31px;
+  width: 1107px;
+  background-color: #ffffff;
+    position: absolute;
+    top: 114px;
+    left: 242px;
+}
