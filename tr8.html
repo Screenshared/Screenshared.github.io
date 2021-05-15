@@ -116,26 +116,20 @@ body {
 </ul>
  <br>
     
-    
-    <div class="row">
-  <div class="column">
-    <img class="popup-image" src="images\Tomb Raider Underworld\1.jpg">
-  </div>
-  <div class="column">
-    <img class="popup-image" src="images\Tomb Raider Underworld\2.jpg">
-  </div>
-  <div class="column">
-   <img class="popup-image" src="images\Tomb Raider Underworld\3.jpg">
-  </div>
-        <div class="column">
-   <img class="popup-image" src="images\Tomb Raider Underworld\4.jpg">
-  </div>
-        <div class="column">
-    <img  class="popup-image" src="images\Tomb Raider Underworld\5.jpg">
-  </div>
+    <!-- ROW IMAGES -->
+<div id='ROWS' class="row">
+        
+        <!-- add images pics -->
+    <script>
+        var text = "";
+        for (var i = 1; i < 13; i++) 
+        {
+            text += "<div class='column'><img class='popup-image' src='images/Tomb Raider Underworld/"+i+".jpg'></div>";
+         }
+            document.getElementById("ROWS").innerHTML = text;
+    </script>
+          
 </div>
-    
-    </div>
  <!-- The Modal -->
 <div id="myModal" class="modal">
   <span class="close">×</span>
@@ -172,7 +166,6 @@ function setListener(){
 }
 
 </script>
-
 
 </body>
 </html>
