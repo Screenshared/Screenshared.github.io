@@ -107,7 +107,7 @@ body {
 }
     /*IMG OPEN*/
 </style>
-<body>
+    <body onload="setListener()">
     <div class='fade-page'>
         <img src="images\logo.png" style="width:7%" ><br>
         Screen Share
@@ -119,27 +119,26 @@ body {
     
     <div class="row">
   <div class="column">
-    <img onclick="javascript:Modal('myImg1')" id="myImg1"  src="images\Tomb Raider Legend\1.jpg">
+    <img class="popup-image" src="images\Tomb Raider Legend\1.jpg">
   </div>
   <div class="column">
-    <img onclick="javascript:Modal('myImg2')" id="myImg2"  src="images\Tomb Raider Legend\2.jpg">
+    <img class="popup-image" src="images\Tomb Raider Legend\2.jpg">
   </div>
   <div class="column">
-   <img onclick="javascript:Modal('myImg3')" id="myImg3"  src="images\Tomb Raider Legend\3.jpg">
+   <img class="popup-image" src="images\Tomb Raider Legend\3.jpg">
   </div>
         <div class="column">
-   <img onclick="javascript:Modal('myImg4')" id="myImg4"  src="images\Tomb Raider Legend\4.jpg">
+   <img class="popup-image" src="images\Tomb Raider Legend\4.jpg">
   </div>
         <div class="column">
-    <img onclick="javascript:Modal('myImg5')" id="myImg5"  src="images\Tomb Raider Legend\5.jpg">
+    <img  class="popup-image" src="images\Tomb Raider Legend\5.jpg">
   </div>
 </div>
     
     </div>
-    
-    <!-- The Modal -->
+ <!-- The Modal -->
 <div id="myModal" class="modal">
-  <span class="close">&times;</span>
+  <span class="close">×</span>
   <img class="modal-content" id="img01">
   <div id="caption"></div>
 </div>
@@ -147,24 +146,33 @@ body {
 <script>
 // Get the modal
 var modal = document.getElementById("myModal");
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-function Modal(immagine){
-var img = document.getElementById(immagine);
 var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-modal.style.display = "block";
-  modalImg.src = img.src;
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-  modal.style.display = "none";
+function listenerForImage(item) {
+		console.log("asd");
+	item.onclick = function(){
+		console.log("asd");
+		modal.style.display = "block";
+		modalImg.src = this.src;
+		captionText.innerHTML = this.alt;
+	};
+	var span = document.getElementsByClassName("close")[0];
+	span.onclick = function() { 
+		modal.style.display = "none";
+	}
 }
+function setListener(){
+
+	var images = document.querySelectorAll(".popup-image");
+	//console.log(images);
+	for(var i = 0; i< images.length; ++i){
+		
+		listenerForImage(images[i]);
+	}
+	
 }
+
 </script>
+
 
 </body>
 </html>
