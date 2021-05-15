@@ -12,6 +12,7 @@
 
 #li_TopBar {
   float: left;
+    border-radius: 12px;
 }
 
 #li_a_TopBar {
@@ -20,6 +21,7 @@
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+border-radius: 12px;
 }
 
 li a:hover:not(.active) {
@@ -42,7 +44,6 @@ li a:hover:not(.active) {
   background-color: #333;
   position: absolute;
     overflow-y: scroll;
-scrollbar-width: none;
   /*height: 100%;*/
 }
 
@@ -159,13 +160,17 @@ scrollbar-width: none;
   flex: 25%;
   max-width: 25%;
   padding: 0 9px;
+border-radius: 25px;
+    
 }
+
 
 .column img {
   margin-top: 9px;
   vertical-align: middle;
   width: 100%;
 box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 12px;
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
@@ -184,4 +189,59 @@ box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     flex: 100%;
     max-width: 100%;
   }
+}
+
+
+.overlay {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.column:hover .overlay {
+  opacity: 1;
+}
+
+.column img:hover .overlay {
+  opacity: 1;
+}
+
+.row:hover .overlay {
+  opacity: 1;
+}
+
+.fade-in-logo {
+    
+  animation: fadeIn 2s;
+  -webkit-animation: fadeIn 2s;
+  -moz-animation: fadeIn 2s;
+  -o-animation: fadeIn 2s;
+  -ms-animation: fadeIn 2s;
+}
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
