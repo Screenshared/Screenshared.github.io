@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="./home.css" rel="stylesheet" type="text/css">
+</head>
+<style>
+    * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+    
+}
+.header {
+  text-align: center;
+  padding: 32px;
+}
+    
+
+    /*IMG OPEN*/
+</style>
+    <body onload="setListener()">
+    <div class='fade-page'>
+        <img src="images\logo.png" style="width:7%" ><br>
+        Screen Share
+<ul id="ul_TopBar">
+  <li id="li_TopBar"><a id="li_a_TopBar"class="active" href="index.html">Home</a></li>
+</ul>
+ <br>
+          
+    <!-- ROW IMAGES -->
+<div id='ROWS' class="row">
+        
+        <!-- add images pics "<div class='column'><img class='popup-image' src='images/Tomb Raider Legend/"+i+".jpg'></div>";-->
+    <script>
+        var text = "";
+        var pic= "";
+        var i=1;
+
+        while (i <= 8) 
+        {
+            text += "<div class='column'><img class='popup-image' src='images/Tomb Raider 3/"+i+".jpg'></div>";
+            i++;
+         }
+            document.getElementById("ROWS").innerHTML = text;
+    </script>
+          
+</div>
+ <!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">×</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+var modalImg = document.getElementById("img01");
+function listenerForImage(item) {
+		console.log("asd");
+	item.onclick = function(){
+		console.log("asd");
+		modal.style.display = "block";
+		modalImg.src = this.src;
+		captionText.innerHTML = this.alt;
+	};
+	var span = document.getElementsByClassName("close")[0];
+	span.onclick = function() { 
+		modal.style.display = "none";
+	}
+}
+function setListener(){
+
+	var images = document.querySelectorAll(".popup-image");
+	//console.log(images);
+	for(var i = 0; i< images.length; ++i){
+		
+		listenerForImage(images[i]);
+	}
+	
+}
+
+</script>
+
+    <br>
+    <br>
+    <br>
+</body>
+</html>
